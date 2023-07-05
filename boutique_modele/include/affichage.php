@@ -1,5 +1,5 @@
-<?php
-// affichage des catégories dans la navigation latérale
+<?php ?>
+<!-- // affichage des catégories dans la navigation latérale
 
 // fin de navigation laterale catégories
 
@@ -57,4 +57,4 @@
 
 //  fin fiche produit
 
-// --------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------->

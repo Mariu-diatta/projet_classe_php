@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS  boutique ;
+use boutique;
 
 create  table IF NOT EXISTS salle(
     id_salle int(3),
@@ -21,6 +22,7 @@ create table IF NOT EXISTS  produit(
     date_depart datetime,
     prix int(3),
     etat ENUM('libre', 'reservation'),
+    categorie ENUM('réunion', 'bureau', 'formation'),
     primary key (id_produit),
     foreign key (id_salle) references salle(id_salle)
 )ENGINE=INNODB;
