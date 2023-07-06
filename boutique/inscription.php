@@ -81,7 +81,7 @@ require_once('include/header.php');
 <!-- affichage du message d'erreur si il a été généré -->
 <?= $erreur ?>
 
-<form class="my-5" method="POST" action="">
+<form class="my-5" method="POST" action="#">
 
     <div class="row">
         <div class="col-md-4 mt-5">

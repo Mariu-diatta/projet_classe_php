@@ -1,6 +1,6 @@
 <?php
 
-/** // pour les commentaires concernant la procédure de connexion, lire ceux dans connexion.php
+// /** // pour les commentaires concernant la procédure de connexion, lire ceux dans connexion.php**
 if(isset($_POST['connexion'])){
   $verifUser = $pdo->prepare("SELECT * FROM membre WHERE pseudo = :pseudo");
   $verifUser->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
@@ -190,4 +190,4 @@ $afficheMenuPublics = $pdo->query("SELECT DISTINCT public FROM produit ORDER BY 
 <?= $validate_index ?>
 
 <h1 class="text-center mt-5"><div class="badge badge-dark text-wrap p-3">La Boutique</div></h1>
-<h2 class="text-center pb-5">Notre Catalogue. Nos Produits !</h2> **/
+<h2 class="text-center pb-5">Notre Catalogue. Nos Produits !</h2> 

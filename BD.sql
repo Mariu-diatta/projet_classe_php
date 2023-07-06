@@ -20,6 +20,7 @@ create table IF NOT EXISTS  produit(
     id_salle int(3),
     date_arrivee datetime,
     date_depart datetime,
+    public TEXT,
     prix int(3),
     etat ENUM('libre', 'reservation'),
     categorie ENUM('réunion', 'bureau', 'formation'),
