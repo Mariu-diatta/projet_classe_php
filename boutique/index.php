@@ -32,7 +32,7 @@ require_once('include/header.php');
             <div class="col-md-8">
             
                 <div class="text-center my-5">
-                    <img class='img-fluid' src="<?= URL ?>img/la_boutique_bis.webp" alt="Bandeau de La Boutique" loading="lazy">
+                    <img class='img-fluid' src="img/la_boutique_bis.webp" alt="Bandeau de La Boutique" loading="lazy">
                 </div>
 
                 <div class="row justify-content-around">
@@ -97,7 +97,7 @@ require_once('include/header.php');
             <div class="col-md-8">
             
                 <div class="text-center my-5">
-                    <img class='img-fluid' src="<?= URL ?>img/la_boutique_bis.webp" alt="Bandeau de La Boutique" loading="lazy">
+                    <img class='img-fluid' src="img/la_boutique_bis.webp" alt="Bandeau de La Boutique" loading="lazy">
                 </div>
 
                 <div class="row justify-content-around">
@@ -154,7 +154,7 @@ require_once('include/header.php');
             <div class="col-md-8">
 
                 <div class="row justify-content-around py-5">
-                    <img class='img-fluid' src="<?= URL ?>img/la_boutique.webp" alt="Bandeau de La Boutique" loading="lazy">    
+                    <img class='img-fluid' src="img/la_boutique.webp" alt="Bandeau de La Boutique" loading="lazy">    
                 </div>
 
             </div>

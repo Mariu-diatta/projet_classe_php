@@ -1,6 +1,6 @@
 <?php
 
-// /** // pour les commentaires concernant la procédure de connexion, lire ceux dans connexion.php**
+/** // pour les commentaires concernant la procédure de connexion, lire ceux dans connexion.php**/
 if(isset($_POST['connexion'])){
   $verifUser = $pdo->prepare("SELECT * FROM membre WHERE pseudo = :pseudo");
   $verifUser->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
@@ -14,10 +14,10 @@ if(isset($_POST['connexion'])){
           $_SESSION['membre'][$key] = $value;
 
           if(internauteConnecteAdmin()){
-            header('location:' . URL . 'admin/index.php?action=validate');
+            header('location:admin/index.php?action=validate');
           }else{
             // pas de redirection vers panier.php, car panier.php envoit vers connexion.php, et non vers cette modale. Donc une seule redirection possible si on n'est pas admin, c'est sur l'index
-            header('location:' . URL . '?action=validate_index');
+            header('location:?action=validate_index');
           }
         }
       }
@@ -68,7 +68,7 @@ $afficheMenuPublics = $pdo->query("SELECT DISTINCT public FROM produit ORDER BY 
 <!-- ------------------- -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<?= URL ?>"><img src="<?= URL ?>img/boutique_logo.webp"></a>
+  <a class="navbar-brand" href="<?= URL ?>"><img src="img/boutique_logo.webp"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -104,9 +104,9 @@ $afficheMenuPublics = $pdo->query("SELECT DISTINCT public FROM produit ORDER BY 
         <button type="button" class="btn btn-outline-success">Espace <?= $_SESSION['membre']['pseudo'] ?><strong></strong></button>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?= URL ?>profil.php">Profil <?= $_SESSION['membre']['pseudo'] ?></a>
-          <a class="dropdown-item" href="<?= URL ?>panier.php">Panier <?= $_SESSION['membre']['pseudo'] ?></a>
-          <a class="dropdown-item" href="<?= URL ?>connexion.php?action=deconnexion">Déconnexion</a>
+          <a class="dropdown-item" href="profil.php">Profil <?= $_SESSION['membre']['pseudo'] ?></a>
+          <a class="dropdown-item" href="panier.php">Panier <?= $_SESSION['membre']['pseudo'] ?></a>
+          <a class="dropdown-item" href="connexion.php?action=deconnexion">Déconnexion</a>
         </div>
       </li>
     <?php else: ?>
@@ -117,11 +117,14 @@ $afficheMenuPublics = $pdo->query("SELECT DISTINCT public FROM produit ORDER BY 
         <button type="button" class="btn btn-outline-success">Espace Membre</button>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?= URL ?>inscription.php"><button class="btn btn-outline-success">Inscription</button></a>
-          <a class="dropdown-item"><button class="btn btn-outline-success" data-toggle="modal" data-target="#connexionModal">
-            Connexion
-          </button></a>
-          <a class="dropdown-item" href="<?= URL ?>panier.php"><button class="btn btn-outline-success px-4">Panier</button></a>
+          <a class="dropdown-item" href="inscription.php">
+            <button class="btn btn-outline-success" >Inscription</button>
+          </a>
+          <a class="dropdown-item">
+            <button class="btn btn-outline-success" data-toggle="modal" data-target="#connexionModal">
+             Connexion
+            </button></a>
+          <a class="dropdown-item" href="panier.php"><button class="btn btn-outline-success px-4">Panier</button></a>
         </div>
       </li>
     <?php endif; ?>
@@ -149,7 +152,7 @@ $afficheMenuPublics = $pdo->query("SELECT DISTINCT public FROM produit ORDER BY 
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel"><img src="<?= URL ?>img/boutique_logo.webp"> La Boutique</h3>
+                <h3 class="modal-title" id="exampleModalLabel"><img src="img/boutique_logo.webp"> La Boutique</h3>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
