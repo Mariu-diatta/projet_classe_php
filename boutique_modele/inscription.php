@@ -5,7 +5,7 @@
 
 <!-- $erreur .= '<div class="alert alert-danger" role="alert">Erreur format pseudo !</div>'; -->
 
-<form class="my-5" method="POST" action="">
+<form class="my-5" method="POST" action="controler.php">
 
     <div class="row">
         <div class="col-md-4 mt-5">
