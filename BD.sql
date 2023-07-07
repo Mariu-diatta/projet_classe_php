@@ -35,8 +35,10 @@ create table IF NOT EXISTS membre(
     nom varchar(20),
     prenom varchar(20),
     email varchar(50),
-    civilite ENUM('m', 'f'),
-    statut int(1),
+    civilite TEXT,
+    ville TEXT,
+    code_postal TEXT,
+    adresse TEXT,
     date_enregistrement datetime,
     primary key  (id_membre)
 )ENGINE=INNODB;
