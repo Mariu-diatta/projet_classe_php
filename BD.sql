@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS  boutique ;
 use boutique;
 
 create  table IF NOT EXISTS salle(
-    id_salle int(3),
+    id_salle int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     titre varchar(200),
     descriptionn TEXT,
     photo varchar(200),
@@ -11,12 +11,11 @@ create  table IF NOT EXISTS salle(
     adresse varchar(50),
     cp int(5),
     capacite int(3),
-    categorie ENUM('réunion', 'bureau', 'formation'),
-    primary key  (id_salle)
+    categorie ENUM('réunion', 'bureau', 'formation')
 )ENGINE=INNODB;
 
 create table IF NOT EXISTS  produit(
-    id_produit int(3),
+    id_produit int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_salle int(3),
     date_arrivee datetime,
     date_depart datetime,
@@ -24,12 +23,11 @@ create table IF NOT EXISTS  produit(
     prix int(3),
     etat ENUM('libre', 'reservation'),
     categorie ENUM('réunion', 'bureau', 'formation'),
-    primary key (id_produit),
     foreign key (id_salle) references salle(id_salle)
 )ENGINE=INNODB;
 
 create table IF NOT EXISTS membre(
-    id_membre int(3),
+    id_membre int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     pseudo varchar(20),
     mbp varchar(60),
     nom varchar(20),
@@ -39,28 +37,25 @@ create table IF NOT EXISTS membre(
     ville TEXT,
     code_postal TEXT,
     adresse TEXT,
-    date_enregistrement datetime,
-    primary key  (id_membre)
+    date_enregistrement datetime
 )ENGINE=INNODB;
 
 create table IF NOT EXISTS commande(
-    id_commande int(3),
+    id_commande int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_membre int(3),
     id_produit int(3),
     date_enregistrement datetime,
-    primary key (id_commande),
     foreign key (id_membre) references membre(id_membre),
     foreign key (id_produit) references produit(id_produit)
 )ENGINE=INNODB;
 
 create table IF NOT EXISTS avis(
-    id_avis int(3),
+    id_avis int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_membre int(3),
     id_salle int(3),
     id_commentaire TEXT,
     note int(2),
-    date_enregistrement datetime,
-    primary key (id_avis)
+    date_enregistrement datetime 
 )
 
 
