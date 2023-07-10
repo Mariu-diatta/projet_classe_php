@@ -165,4 +165,4 @@ require_once('include/header.php');
     </div>
 <div class="container">
 
-<?php require_once('include/footer.php');
+<?php require_once('include/footer.php');?>

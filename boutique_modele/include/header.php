@@ -79,10 +79,12 @@
         } ?>
 
             <a class="dropdown-item" href="inscription.php"><button class="btn btn-outline-success">Inscription</button></a>
-              <a class= "dropdown-item"><button class="btn btn-outline-success" data-toggle="modal" data-target="#connexionModal\">
-                Connexion
-              </button>
-            </a>
+              <a class= "dropdown-item" href="connexion.php">
+                  <button class="btn btn-outline-success" data-toggle="modal" data-target="#connexionModal\">
+                    Connexion
+                  </button> 
+              </a>
+            
           <a class="dropdown-item" href="panier.php"><button class="btn btn-outline-success px-4">Panier</button></a>
         </div>
       </li>
