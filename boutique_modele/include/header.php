@@ -67,10 +67,22 @@
         <button type="button" class="btn btn-outline-success">Espace Membre</button>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="inscription.php"><button class="btn btn-outline-success">Inscription</button></a>
-          <a class="dropdown-item"><button class="btn btn-outline-success" data-toggle="modal" data-target="#connexionModal">
-            Connexion
-          </button></a>
+
+        <?php function printBtnConnDeconn(){
+            if (!internauteConnecte()) {
+             echo "<a class=\"dropdown-item\" href=\"inscription.php\"><button class=\"btn btn-outline-success\">Inscription</button></a>
+              <a class= \"dropdown-item\"><button class=\"btn btn-outline-success\" data-toggle=\"modal\" data-target=\"#connexionModal\">
+                Connexion
+              </button></a>"; 
+            }
+
+        } ?>
+
+            <a class="dropdown-item" href="inscription.php"><button class="btn btn-outline-success">Inscription</button></a>
+              <a class= "dropdown-item"><button class="btn btn-outline-success" data-toggle="modal" data-target="#connexionModal\">
+                Connexion
+              </button>
+            </a>
           <a class="dropdown-item" href="panier.php"><button class="btn btn-outline-success px-4">Panier</button></a>
         </div>
       </li>
@@ -106,7 +118,7 @@
                 </div>
                 <div class="modal-body text-center">
                 
-                <form name="connexion" method="POST" action="">
+                <form name="connexion" method="POST" action="connexion.php">
                     <div class="row justify-content-around">
                       <div class="col-md-4 mt-4">
                       <label class="form-label" for="pseudo"><div class="badge badge-dark text-wrap">Pseudo</div></label>
@@ -116,8 +128,8 @@
 
                     <div class="row justify-content-around">
                       <div class="col-md-6 mt-4">
-                      <label class="form-label" for="mdp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
-                      <input class="form-control btn btn-outline-success" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
+                      <label class="form-label" for="mbp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
+                      <input class="form-control btn btn-outline-success" type="password" name="mbp" id="mbp" placeholder="Votre mot de passe">
                       </div>
                     </div>
                     

@@ -37,7 +37,8 @@ create table IF NOT EXISTS membre(
     ville TEXT,
     code_postal TEXT,
     adresse TEXT,
-    date_enregistrement datetime
+    statut int(1) DEFAULT 0,
+    date_enregistrement DATE DEFAULT (CURRENT_DATE)
 )ENGINE=INNODB;
 
 create table IF NOT EXISTS commande(

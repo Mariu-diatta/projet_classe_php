@@ -8,6 +8,9 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>'; -->
+<?php
+    require_once('includeAdmin/header.php');
+?>
 
 <h1 class="text-center my-5"><div class="badge badge-warning text-wrap p-3">Gestion des utilisateurs</div></h1>
 
@@ -184,3 +187,4 @@
   </div>
 </div>
 <!-- modal -->
+<?php require_once('includeAdmin/footer.php'); ?>

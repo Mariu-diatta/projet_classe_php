@@ -1,3 +1,7 @@
+<?php
+ include_once('include/fonctions.php') ;
+ include_once('include/header.php') ;
+?>
 
 </div>
 
@@ -50,4 +54,5 @@
 </div>
 
 <div class="container">
+<?php require_once('include/footer.php');
 

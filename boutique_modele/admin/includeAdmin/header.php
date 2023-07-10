@@ -31,12 +31,12 @@
     <!-- Sidebar -->
     <div class="bg-dark border-right" id="sidebar-wrapper">
       <div class="sidebar-heading text-warning">La Boutique Admin </div>
-      <div class="list-group list-group-flush">
-        <a href="<?= URL ?>admin/gestion_membre.php" class="list-group-item list-group-item-action bg-dark text-light py-5"><button type="button" class="btn btn-outline-warning text-light">&nbspGestion &nbspdes&nbsp membres&nbsp</button></a>
-        <a href="<?= URL ?>admin/gestion_produit.php" class="list-group-item list-group-item-action bg-dark text-light py-5"><button type="button" class="btn btn-outline-warning text-light">&nbspGestion &nbsp&nbspdes&nbsp&nbsp produits&nbsp</button></a>
-        <a href="<?= URL ?>admin/gestion_commande.php" class="list-group-item list-group-item-action bg-dark text-light py-5"><button type="button" class="btn btn-outline-warning text-light">Gestion des commandes</button></a>
-        <a href="<?= URL ?>admin/gestion_detail_commande.php" class="list-group-item list-group-item-action bg-dark text-light py-4"><button type="button" class="btn btn-outline-warning text-light">&nbspDétail des commandes&nbsp</button></a>
-        <a href="<?= URL ?>index.php" class="list-group-item list-group-item-action bg-dark text-light py-5"><button type="button" class="btn btn-outline-warning text-light">Retour Accueil Boutique</button></a>
+      <div class="list-group list-group-flush pt-3">
+        <button type="button" class="btn btn-outline-warning text-light " ><a href="../admin/gestion_membre.php" class="list-group-item list-group-item-action bg-dark text-light py-2">&nbspGestion &nbspdes&nbsp membres&nbsp</a></button>
+        <button type="button" class="btn btn-outline-warning text-light mt-5"><a href="../admin/gestion_produit.php" class="list-group-item list-group-item-action bg-dark text-light py-2">&nbspGestion &nbsp&nbspdes&nbsp&nbsp produits&nbsp</a></button>
+        <button type="button" class="btn btn-outline-warning text-light mt-5"><a href="../admin/gestion_commande.php" class="list-group-item list-group-item-action bg-dark text-light py-2">Gestion des commandes</a></button>
+        <button type="button" class="btn btn-outline-warning text-light mt-5"><a href="../admin/gestion_detail_commande.php" class="list-group-item list-group-item-action bg-dark text-light py-2">&nbspDétail des commandes&nbsp</a></button>
+        <button type="button" class="btn btn-outline-warning text-light mt-5"><a href="index.php" class="list-group-item list-group-item-action bg-dark text-light py-2">Retour Accueil Boutique</button></a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -44,7 +44,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+<nav class="navbar navbar-expand-lg border-bottom">
   <button class="btn btn-lg btn-outline-warning" id="menu-toggle"><i class="bi bi-caret-left-square-fill"></i> Menu <i class="bi bi-caret-right-square-fill"></i></button>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,20 +54,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="<?= URL ?>index.php"><button type="button" class="btn btn-outline-warning text-light">Home Boutique</button></a>
+        <a class="nav-link" href="../index.php"><button type="button" class="btn btn-outline-warning text-light">Home Boutique</button></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= URL ?>admin/index.php"><button type="button" class="btn btn-outline-warning text-light">Home Admin</button></a>
+        <a class="nav-link" href="index.php"><button type="button" class="btn btn-outline-warning text-light">Home Admin</button></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <button type="button" class="btn btn-outline-warning text-light">Menu Admin</button>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?= URL ?>admin/gestion_membre.php">Gestion des membres</a>
-          <a class="dropdown-item" href="<?= URL ?>admin/gestion_produit.php">Gestion des produits</a>
-          <a class="dropdown-item" href="<?= URL ?>admin/gestion_commande.php">Gestion des commandes</a>
-          <a class="dropdown-item" href="<?= URL ?>admin/gestion_detail_commande.php">Détail des commandes</a>
+          <a class="dropdown-item" href="../admin/gestion_membre.php" >Gestion des membres</a>
+          <a class="dropdown-item" href="../admin/gestion_produit.php">Gestion des produits</a>
+          <a class="dropdown-item" href="../admin/gestion_commande.php">Gestion des commandes</a>
+          <a class="dropdown-item" href="../admin/gestion_detail_commande.php">Détail des commandes</a>
         </div>
       </li>
     </ul>

@@ -1,3 +1,8 @@
+<?php
+    require_once('include/init.php');
+    require_once('include/fonctions.php');
+   // require_once('include/header.php');
+?>
 
 <h2 class="text-center my-5"><div class="badge badge-dark text-wrap p-3">Bonjour  </div></h2>
 
@@ -19,3 +24,5 @@
         </ul>
     </div>
 </div>
+
+<?php require_once('include/footer.php');

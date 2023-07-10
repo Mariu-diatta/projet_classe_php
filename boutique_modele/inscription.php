@@ -1,5 +1,7 @@
 <?php
-require_once('include/init.php');
+    require_once('include/init.php');
+    require_once('include/init.php');
+    require_once('include/header.php');
 // si' linternaute est connecté, je ne lui donne pas accés a cette page. Je le redirige vers son profil
 if(internauteConnecte()){
     header('location:profil.php');
@@ -149,3 +151,4 @@ require_once('include/header.php');
     </div>
     
 </form>
+<?php require_once('include/footer.php');

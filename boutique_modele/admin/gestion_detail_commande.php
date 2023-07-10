@@ -7,6 +7,10 @@
                         </button>
                     </div>'; -->
 
+<?php
+    require_once('includeAdmin/header.php');
+?>
+
 <h1 class="text-center my-5"><div class="badge badge-warning text-wrap p-3">Gestion détail des commandes</div></h1>
 
 <!-- <div class="blockquote alert alert-dismissible fade show mt-5 shadow border border-warning rounded" role="alert">
@@ -137,3 +141,4 @@
   </div>
 </div>
 <!-- modal -->
+<?php require_once('includeAdmin/footer.php'); 

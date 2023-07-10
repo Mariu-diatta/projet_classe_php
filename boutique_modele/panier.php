@@ -1,3 +1,7 @@
+<?php
+ include_once('include/fonctions.php') ;
+ include_once('include/header.php') ;
+?>
 
 <!-- $content .= '<div class="alert alert-danger" role="alert">La quantité du produit <strong>'  '</strong> a été diminuée. Vérifiez votre nouveau panier !</div>'; -->
 
@@ -156,3 +160,4 @@
 <!--Section: Block Content-->
 
 <!-- fin de panier -->
+<?php require_once('include/footer.php');

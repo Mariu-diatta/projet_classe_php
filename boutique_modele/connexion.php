@@ -1,5 +1,6 @@
 <?php
     require_once('include/init.php');
+    require_once('include/fonctions.php');
     require_once('include/header.php');
 ?>
 
@@ -22,7 +23,7 @@
     <input class="form-control btn btn-outline-success mb-4" type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo">
 
     <label class="form-label" for="mdp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
-    <input class="form-control btn btn-outline-success mb-4" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
+    <input class="form-control btn btn-outline-success mb-4" type="password" name="mbp" id="mbp" placeholder="Votre mot de passe">
 
     <button type="submit" class="btn btn-lg btn-outline-success offset-md-4 my-2">Connexion</button>
 
@@ -62,20 +63,21 @@ if(isset($_GET['action']) && $_GET['action'] == "validate"){
                 </div>';
 }
 
-if($_POST){
+if($_POST && !internauteConnecte()){
     // procédure d'authentification commence par vérifier si le pseudo existe en BDD
     $verifUser = $pdo->prepare("SELECT * FROM membre WHERE pseudo = :pseudo");
     $verifUser->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
     $verifUser->execute();
-
+    echo "je lance la connexion";
     // si j'en trouve un similaire en bdd
     if($verifUser->rowCount() == 1){
         // fetch pour récupérer ses données en bdd, dont le mdp qui va m'interesser tout de suite, puis d'autres infos, un peu plus bas pour ouvrir la session
         $user = $verifUser->fetch(PDO::FETCH_ASSOC);
+        echo "Il y a un seul membre";
         // debug($user);
-        if(password_verify($_POST['mdp'], $user['mdp'])){
+        if(password_verify($_POST['mbp'], $user['mbp'])){
         // password_verify prend deux arguments. Le mdp du formulaire et le compare au mdp stocké en bdd
-
+        echo "je valide le pseudo";
         // $_SESSION['membre']['id_membre'] = $membre['id_membre'];
         // $_SESSION['membre']['pseudo'] = $membre['pseudo'];
         // $_SESSION['membre']['nom'] = $membre['nom'];
@@ -89,19 +91,23 @@ if($_POST){
 
         // la foreach ci dessous remplace tout code qui précède
             foreach($user as $key => $value){
-                if($key != 'mdp'){
+                if($key != 'mbp'){
                     // si le user réussit a se connecter, on lui ouvre une session, et on collecte toutes ses données enregistrées en bdd (sauf le mdp). Ci dessus la syntaxe (commentée), champs par champs,syntaxe longue, détaillée, au lieu de la boucle foreach
                     $_SESSION['membre'][$key] = $value;
                     if(internauteConnecteAdmin()){
                     // trois rediractions possibles. si on est admin, si on se connecte en venant du panier, ou en temps que user lambda
                         // redirection vers le back office si c'est l'admin
-                        header('location:' . URL . 'admin/index.php?action=validate');
+                        header('location:admin/index.php?action=validate');
                     }elseif(isset($_GET['action']) && $_GET['action'] == "acheter"){
                         // redirection vers le panier si le user en vient après sa connection
-                        header('location:' . URL . 'panier.php');
+                        header('location:panier.php');
                     }else{
                         // redirection vers le profil si c'est un user lambda
-                        header('location:' . URL . 'profil.php?action=validate');
+                        $pudateStatut =  $pdo->prepare("UPDATE produit set statut=1 WHERE pseudo = :pseudo");
+                        $pudateStatut->bindValue(':statut', 1, PDO::PARAM_STR);
+                        $pudateStatut->execute();
+                        echo "je suis connecté";
+                        header('location:profil.php?action=validate');
                     }
                 }
             }
@@ -115,3 +121,5 @@ if($_POST){
     }
 }   
 ?>
+
+<?php require_once('include/footer.php');
