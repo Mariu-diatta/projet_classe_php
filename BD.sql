@@ -17,10 +17,14 @@ create  table IF NOT EXISTS salle(
 create table IF NOT EXISTS  produit(
     id_produit int(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_salle int(3),
-    date_arrivee datetime,
+    date_arrivee DATE DEFAULT (CURRENT_DATE),
     date_depart datetime,
     public TEXT,
+    produit_description TEXT,
     prix int(3),
+    taille int(3),
+    couleur varchar(),
+    content BLOB not null,
     etat ENUM('libre', 'reservation'),
     categorie ENUM('réunion', 'bureau', 'formation'),
     foreign key (id_salle) references salle(id_salle)

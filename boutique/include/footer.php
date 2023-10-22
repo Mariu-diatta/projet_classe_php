@@ -1,9 +1,7 @@
 </div>
 
 <footer class="pt-5">
-
-<h3 class="text-center mt-5"><div class="badge badge-dark text-wrap p-3">&copy; La Boutique 2021</div></h3>
-
+    <h3 class="text-center mt-5"><div class="badge badge-dark text-wrap p-3">&copy; La Boutique 2021</div></h3>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

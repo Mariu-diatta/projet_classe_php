@@ -92,18 +92,17 @@ require_once('include/header.php');
 
 <form class="my-5" method="POST" action="">
 
-    <div class="col-md-4 offset-md-4 my-4">
-
-    <label class="form-label" for="pseudo"><div class="badge badge-dark text-wrap">Pseudo</div></label>
-    <input class="form-control btn btn-outline-success mb-4" type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo">
-
-    <label class="form-label" for="mdp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
-    <input class="form-control btn btn-outline-success mb-4" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
-
-    <button type="submit" class="btn btn-lg btn-outline-success offset-md-4 my-2">Connexion</button>
-
+    <div class="col-md-2 mt-2">
+        <label class="form-label" for="pseudo"><div class="badge badge-dark text-wrap">Pseudo</div></label>
+        <input class="form-control btn btn-outline-success mb-4" type="text" name="pseudo" id="pseudo" placeholder="Votre mot de passe">
     </div>
    
+    <div class="col-md-2 mt-2">
+        <label class="form-label" for="mdp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
+        <input class="form-control btn btn-outline-success mb-4" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
+    </div>
+
+    <button type="submit" class="btn btn-lg btn-outline-success offset-md-4 my-2">Connexion</button>
 </form>
 
 <?php require_once('include/footer.php');

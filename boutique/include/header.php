@@ -145,52 +145,53 @@ $afficheMenuPublics = $pdo->query("SELECT DISTINCT public FROM produit ORDER BY 
 
 </header>
 
-<div class="container">
+<div >
+  <!-- Modal -->
+  <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
 
-          <!-- Modal -->
-          <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel"><img src="img/boutique_logo.webp"> La Boutique</h3>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body text-center">
-                
-                <form name="connexion" method="POST" action="">
-                    <div class="row justify-content-around">
-                      <div class="col-md-4 mt-4">
-                      <label class="form-label" for="pseudo"><div class="badge badge-dark text-wrap">Pseudo</div></label>
-                      <input class="form-control btn btn-outline-success" type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo">
-                      </div>
-                    </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel"><img src="img/boutique_logo.webp"> La Boutique</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
 
-                    <div class="row justify-content-around">
-                      <div class="col-md-6 mt-4">
-                      <label class="form-label" for="mdp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
-                      <input class="form-control btn btn-outline-success" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
-                      </div>
-                    </div>
-                    
-                    <div class="row justify-content-center">
-                      <button type="submit" name="connexion" class="btn btn-lg btn-outline-success mt-3">Connexion</button>
-                    </div>
-
-                </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <div class="modal-body text-center">
+          <form name="connexion" method="POST" action="" >
+              <div class="row justify-content-around">
+                <div class="col-md-6 ">
+                <label class="form-label" for="pseudo"><div class="badge badge-dark text-wrap">Pseudo</div></label>
+                <input class="form-control btn btn-outline-success" type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo">
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- ------------- -->
+
+              <div class="row justify-content-around">
+                <div class="col-md-6">
+                <label class="form-label" for="mdp"><div class="badge badge-dark text-wrap">Mot de passe</div></label>
+                <input class="form-control btn btn-outline-success" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
+                </div>
+              </div>
+              
+              <div class="row justify-content-center">
+                <button type="submit" name="connexion" class="btn btn-lg btn-outline-success mt-3">Connexion</button>
+              </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ------------- -->
 
 <!-- ne s'affiche que sur l'index, pour ne pas avoir de doubles erreurs ou validations sur les pages inscription et connexion -->
 <?= $erreur_index ?>
 <?= $validate_index ?>
 
-<h1 class="text-center mt-5"><div class="badge badge-dark text-wrap p-3">La Boutique</div></h1>
-<h2 class="text-center pb-5">Notre Catalogue. Nos Produits !</h2> 
+<!--h1 class="text-center mt-5"><div class="badge badge-dark text-wrap p-3">La Boutique</div></h1-->
+<!--h2 class="text-center pb-5">Notre Catalogue. Nos Produits !</h2--> 
